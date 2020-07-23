@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import ReactTable from 'react-table-6';
-import api from '../api/index.js';
 
 import styled from 'styled-components'
 
 import 'react-table-6/react-table.css'
 import { Card, CardDeck, Button, Form } from 'react-bootstrap';
 import ListGroup from 'react-bootstrap/ListGroup';
+
+import axios from 'axios';
 
 const Wrapper = styled.div`
     padding: 0 100px 40px 100px;
@@ -29,18 +30,18 @@ class Answers extends Component {
           questionId: window.location.href.split("answers/")[1]
         });
 
-        await api.getAnswerById(window.location.href.split("answers/")[1]).then(topics => {
-          console.log(topics);
+        axios.get('http://localhost:5000/answers/' + window.location.href.split("answers/")[1]).then(answers => {
+          if (answers.data != null) {
             this.setState({
-                answers: topics.data.data,
+                answers: answers.data,
                 isLoading: false,
             })
+          }
         });
 
-        await api.getTopicById(window.location.href.split("answers/")[1]).then(question => {
-          console.log(question);
+        axios.get('http://localhost:5000/topics/' + window.location.href.split("answers/")[1]).then(question => {
             this.setState({
-                question: question.data.data.question
+                question: question.data.question
             })
         });
     }
@@ -54,13 +55,16 @@ class Answers extends Component {
         answer: document.getElementById("answer").value
       }
 
-      await api.addAnswer(payload).then(res => {
-          window.alert(`Answer inserted successfully`)
-          // this.setState({
-          //     question: '',
-          //     name: ''
-          // })
-      });
+      axios.post('http://localhost:5000/answers/add', payload)
+      .then(res => console.log(res.data));
+
+      // await api.addAnswer(payload).then(res => {
+      //     window.alert(`Answer inserted successfully`)
+      //     // this.setState({
+      //     //     question: '',
+      //     //     name: ''
+      //     // })
+      // });
 
       console.log(payload);
 

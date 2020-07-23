@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import api from '../api'
-
 import styled from 'styled-components'
+
+import axios from 'axios';
 
 const Title = styled.h1.attrs({
     className: 'h1',
@@ -61,16 +61,11 @@ class TopicsInsert extends Component {
         const payload = {
           question: this.state.question,
           name: this.state.name,
-          active: 'N'
         }
 
-        await api.insertTopic(payload).then(res => {
-            window.alert(`Topic inserted successfully`)
-            this.setState({
-                question: '',
-                name: ''
-            })
-        })
+        axios.post('http://localhost:5000/topics/create', payload)
+        .then(res => console.log(res.data));
+
     }
 
     render() {
@@ -94,7 +89,7 @@ class TopicsInsert extends Component {
                 />
 
                 <Button onClick={this.handleAddMovie}>Submit Topic</Button>
-                <CancelButton href={'/topics/list'}>Cancel</CancelButton>
+                <CancelButton href={'/'}>Cancel</CancelButton>
             </Wrapper>
         )
     }

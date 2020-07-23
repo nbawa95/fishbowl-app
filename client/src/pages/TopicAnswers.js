@@ -1,7 +1,5 @@
-
 import React, { Component } from 'react';
 import ReactTable from 'react-table-6';
-import api from '../api/index.js';
 
 import styled from 'styled-components'
 

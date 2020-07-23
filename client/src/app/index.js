@@ -11,13 +11,9 @@ function App() {
         <Router>
             <NavBar />
             <Switch>
-                <Route path="/topics/list" exact component={TopicsList} />
+                <Route path="/" exact component={TopicsList} />
+                <Route path="/topics/getTopics" exact component={TopicsList} />
                 <Route path="/topics/create" exact component={TopicsInsert} />
-                <Route
-                    path="/topics/update/:id"
-                    exact
-                    component={TopicsUpdate}
-                />
                 <Route
                     path="/answers/:id"
                     exact

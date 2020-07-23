@@ -31,7 +31,7 @@ class Links extends Component {
                 <Collapse>
                     <List>
                         <Item>
-                            <Link to="/topics/list" className="nav-link">
+                            <Link to="/topics/getTopics" className="nav-link">
                                 List Topics
                             </Link>
                         </Item>
