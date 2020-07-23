@@ -63,7 +63,7 @@ class TopicsInsert extends Component {
           name: this.state.name,
         }
 
-        axios.post('/topics/create', payload)
+        axios.post('/api/topics/create', payload)
         .then(res => console.log(res.data));
 
     }

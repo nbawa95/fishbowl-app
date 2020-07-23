@@ -30,7 +30,7 @@ class Answers extends Component {
           questionId: window.location.href.split("answers/")[1]
         });
 
-        axios.get('/answers/' + window.location.href.split("answers/")[1]).then(answers => {
+        axios.get('/api/answers/' + window.location.href.split("answers/")[1]).then(answers => {
           if (answers.data != null) {
             this.setState({
                 answers: answers.data,
@@ -39,7 +39,7 @@ class Answers extends Component {
           }
         });
 
-        axios.get('/topics/' + window.location.href.split("answers/")[1]).then(question => {
+        axios.get('/api/topics/' + window.location.href.split("answers/")[1]).then(question => {
             this.setState({
                 question: question.data.question
             })
@@ -55,7 +55,7 @@ class Answers extends Component {
         answer: document.getElementById("answer").value
       }
 
-      axios.post('/answers/add', payload)
+      axios.post('/api/answers/add', payload)
       .then(res => console.log(res.data));
 
       // await api.addAnswer(payload).then(res => {

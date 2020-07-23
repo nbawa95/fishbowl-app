@@ -12,8 +12,8 @@ app.use(cors());
 const topicsRouter = require('./routes/topics');
 const answersRouter = require('./routes/answers');
 
-app.use('/topics', topicsRouter);
-app.use('/answers', answersRouter);
+app.use('/api/topics', topicsRouter);
+app.use('/api/answers', answersRouter);
 
 if (process.env.NODE_ENV === 'production') {
     app.use(express.static('client/build'));

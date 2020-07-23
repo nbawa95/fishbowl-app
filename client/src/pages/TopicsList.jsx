@@ -25,7 +25,7 @@ class TopicsList extends Component {
     componentDidMount = async () => {
         this.setState({ isLoading: true });
 
-        axios.get('/topics/getTopics')
+        axios.get('/api/topics/getTopics')
           .then(response => {
             if (response.data.length > 0 && response.data != null) {
               console.log(response);
