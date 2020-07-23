@@ -9,6 +9,7 @@
   "devDependencies": {},
   "scripts": {
     "start": "node backend/server.js",
+    "build": "react-scripts build",
     "heroku-postbuild": "cd client && npm install && npm run build"
   },
   "engines": {

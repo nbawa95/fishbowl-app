@@ -15,10 +15,13 @@ const answersRouter = require('./routes/answers');
 app.use('/topics', topicsRouter);
 app.use('/answers', answersRouter);
 
-app.use(express.static(path.join(__dirname, '../build')))
-app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, '../build'))
-})
+if (process.env.NODE_ENV === 'production') {
+    app.use(express.static('client/build'));
+
+    app.get('*', (req, res) => {
+        res.sendFile(path.join(__dirname, 'client', 'build', 'index.html')); // relative path
+    });
+}
 
 const port = process.env.PORT || 5000;
 app.listen(port, () => {
