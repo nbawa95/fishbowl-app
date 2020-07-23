@@ -63,7 +63,7 @@ class TopicsInsert extends Component {
           name: this.state.name,
         }
 
-        axios.post('http://localhost:5000/topics/create', payload)
+        axios.post('/topics/create', payload)
         .then(res => console.log(res.data));
 
     }
