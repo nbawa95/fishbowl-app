@@ -4,10 +4,17 @@ import styled from 'styled-components'
 
 const Collapse = styled.div.attrs({
     className: 'collpase navbar-collapse',
+    id: 'navBar'
 })`
   margin: 0 auto !important;
   align-items: center !important;
   width: 50%;
+  @media screen and (max-width: 480px) {
+      margin: 0 auto !important;
+      align-items: center !important;
+      width: unset;
+    }
+  }
 `
 
 const List = styled.div.attrs({

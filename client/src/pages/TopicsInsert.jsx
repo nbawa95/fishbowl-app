@@ -89,7 +89,7 @@ class TopicsInsert extends Component {
                 />
 
                 <Button onClick={this.handleAddMovie}>Submit Topic</Button>
-                <CancelButton href={'/'}>Cancel</CancelButton>
+                <CancelButton id="cancelButton" href={'/'}>Cancel</CancelButton>
             </Wrapper>
         )
     }

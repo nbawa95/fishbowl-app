@@ -59,8 +59,8 @@ class TopicsList extends Component {
 
                 <CardDeck>
                   <Card style={{borderColor: "#a3cef1", borderWidth: "4px"}}>
-                    <Card.Body>
-                      <Card.Title>Create a Topic</Card.Title>
+                    <Card.Body style={{textAlign: "center"}}>
+                      <Card.Title style={{color: "#274c77"}}>Create a Topic</Card.Title>
                       <Card.Text>
                         <Card.Link href="/topics/create">Click Here</Card.Link>
                       </Card.Text>

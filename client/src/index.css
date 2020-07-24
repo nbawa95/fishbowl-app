@@ -25,3 +25,13 @@ a {
 .form-control {
   border-radius: 0px;
 }
+
+#cancelButton {
+  color: #fff !important
+}
+
+@media screen and (max-width: 480px) {
+  .iasQdL {
+    padding: 0 25px 40px 25px !important;
+  }
+}

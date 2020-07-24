@@ -10,6 +10,7 @@ function App() {
     return (
         <Router>
             <NavBar />
+            <hr />
             <Switch>
                 <Route path="/" exact component={TopicsList} />
                 <Route path="/topics/getTopics" exact component={TopicsList} />
