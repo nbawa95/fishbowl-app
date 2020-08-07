@@ -58,6 +58,15 @@ class Answers extends Component {
       axios.post('/api/answers/add', payload)
       .then(res => console.log(res.data));
 
+      axios.get('/api/answers/' + window.location.href.split("answers/")[1]).then(answers => {
+        if (answers.data != null) {
+          this.setState({
+              answers: answers.data,
+              isLoading: false,
+          })
+        }
+      });
+
       // await api.addAnswer(payload).then(res => {
       //     window.alert(`Answer inserted successfully`)
       //     // this.setState({
@@ -91,10 +100,10 @@ class Answers extends Component {
 
         return (
             <Wrapper>
-              <h1 style={{color: "#274c77", textAlign: "center"}}>{this.state.question}</h1>
-              <ListGroup variant="flush">
+              <h1 style={{color: "#274c77", textAlign: "center", paddingBottom: "10px"}}>{this.state.question}</h1>
+              <ListGroup variant="flush" style={{paddingBottom: "30px"}}>
               { this.state.answers.map((answer, key) =>
-                <ListGroup.Item style={{backgroundColor: "transparent", color: "#1b2845"}}><b>{answer.name}:</b> {answer.answer}</ListGroup.Item>
+                <ListGroup.Item style={{backgroundColor: "white", color: "#1b2845", paddingBottom: "10px"}}><b>{answer.name}:</b> {answer.answer}</ListGroup.Item>
               )}
               </ListGroup>
               <Form>
@@ -105,7 +114,7 @@ class Answers extends Component {
                 <Form.Group controlId="formBasicAnswer">
                   <Form.Control onChange={this.handleChangeInputAnswer} id="answer" as="textarea" rows="3" placeholder="Type your answer" />
                 </Form.Group>
-                <Button style={{backgroundColor: "#274c77", border: "none"}} onClick={this.submitAnswer} variant="primary">
+                <Button style={{backgroundColor: "#E66F5F", border: "none"}} onClick={this.submitAnswer} variant="primary">
                   Submit your answer
                 </Button>
               </Form>

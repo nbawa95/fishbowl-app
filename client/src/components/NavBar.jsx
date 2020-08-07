@@ -21,7 +21,7 @@ class NavBar extends Component {
         return (
             <Container>
                 <Nav>
-                    <h1 style={{textAlign: "center"}}>- F I S H B O W L -</h1>
+                    <h1 style={{textAlign: "center", color: "#E66F5F"}}>fishbowl.</h1>
                     <Links style={{display: "flex"}} />
                 </Nav>
             </Container>

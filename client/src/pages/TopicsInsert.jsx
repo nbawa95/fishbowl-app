@@ -63,8 +63,10 @@ class TopicsInsert extends Component {
           name: this.state.name,
         }
 
-        axios.post('/api/topics/create', payload)
-        .then(res => console.log(res.data));
+        // axios.post('/api/topics/create', payload)
+        // .then(res => console.log(res.data));
+
+        window.location.href='/topics/getTopics'
 
     }
 
@@ -72,7 +74,7 @@ class TopicsInsert extends Component {
         const { question, name } = this.state
         return (
             <Wrapper>
-                <Title>Have an idea for a topic? Submit it Below!</Title>
+                <Title style={{color: "#274c77"}}>Have an idea for a topic? Submit it Below!</Title>
 
                 <Label>Topic: </Label>
                 <InputText
@@ -88,8 +90,8 @@ class TopicsInsert extends Component {
                     placeholder="Leave this blank to remain anonymous"
                 />
 
-                <Button onClick={this.handleAddMovie}>Submit Topic</Button>
-                <CancelButton id="cancelButton" href={'/'}>Cancel</CancelButton>
+                <Button onClick={this.handleAddMovie} style={{backgroundColor: "#E66F5F", border: "none"}}>Submit Topic</Button>
+                <CancelButton id="cancelButton" style={{backgroundColor: "#274c77", border: "none"}} href={'/'}>Cancel</CancelButton>
             </Wrapper>
         )
     }

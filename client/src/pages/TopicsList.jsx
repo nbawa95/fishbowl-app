@@ -58,7 +58,7 @@ class TopicsList extends Component {
             <Wrapper>
 
                 <CardDeck>
-                  <Card style={{borderColor: "#a3cef1", borderWidth: "4px"}}>
+                  <Card style={{borderColor: "rgb(230, 111, 95, 0.5)", borderWidth: "4px"}}>
                     <Card.Body style={{textAlign: "center"}}>
                       <Card.Title style={{color: "#274c77"}}>Create a Topic</Card.Title>
                       <Card.Text>
@@ -68,7 +68,7 @@ class TopicsList extends Component {
                   </Card>
 
                   { topics.map((theTopic, key) =>
-                    <Card key={key} style={{borderTopColor: "#a3cef1", borderTopWidth: "4px"}}>
+                    <Card className="questionCard" key={key} style={{borderTopColor: "rgb(230, 111, 95, 0.5)", borderTopWidth: "4px"}}>
                       <Card.Body style={{textAlign: "center"}}>
                         <Card.Title style={{color: "#274c77"}}>{theTopic.question}</Card.Title>
                         <Card.Text style={{color: "#8b8c89"}}>
