@@ -20,7 +20,9 @@ class Answers extends Component {
             questionId: '',
             answers: [],
             isLoading: false,
-            question: ''
+            question: '',
+            name: '',
+            answer: ''
         }
     }
 
@@ -56,16 +58,22 @@ class Answers extends Component {
       }
 
       axios.post('/api/answers/add', payload)
-      .then(res => console.log(res.data));
+      .then(res => {
+          console.log(res.data);
+          document.getElementById("name").value = "";
+          document.getElementById("answer").value = "";
 
-      axios.get('/api/answers/' + window.location.href.split("answers/")[1]).then(answers => {
-        if (answers.data != null) {
-          this.setState({
-              answers: answers.data,
-              isLoading: false,
-          })
+          axios.get('/api/answers/' + window.location.href.split("answers/")[1]).then(answers => {
+            if (answers.data != null) {
+              this.setState({
+                  answers: answers.data,
+                  isLoading: false,
+              })
+            }
+          });
         }
-      });
+      );
+
 
       // await api.addAnswer(payload).then(res => {
       //     window.alert(`Answer inserted successfully`)
