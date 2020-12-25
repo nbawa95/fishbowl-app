@@ -6,6 +6,9 @@ import styled from 'styled-components'
 import 'react-table-6/react-table.css'
 import { Card, CardDeck, Button, Form } from 'react-bootstrap';
 import ListGroup from 'react-bootstrap/ListGroup';
+import './Answers.css';
+import plusWhiteIcon from '../images/plus-white.png';
+import backArrow from '../images/back-arrow.png';
 
 import axios from 'axios';
 
@@ -108,24 +111,29 @@ class Answers extends Component {
 
         return (
             <Wrapper>
-              <h1 style={{color: "#274c77", textAlign: "center", paddingBottom: "10px"}}>{this.state.question}</h1>
-              <ListGroup variant="flush" style={{paddingBottom: "30px"}}>
+              <a className="backArrow animate-left-to-right" href='/'>
+                <img className="arrowImage" src={backArrow}/>
+              </a>
+              <h1 style={{color: "#F0953D", textAlign: "center", margin: "50px"}}>{this.state.question}</h1>
+              <ListGroup className="answerContainer" variant="flush" style={{paddingBottom: "30px"}}>
               { this.state.answers.map((answer, key) =>
-                <ListGroup.Item style={{backgroundColor: "white", color: "#1b2845", paddingBottom: "10px"}}><b>{answer.name}:</b> {answer.answer}</ListGroup.Item>
+                <ListGroup.Item className="answerCard"><b>{answer.name}:</b> {answer.answer}</ListGroup.Item>
               )}
-              </ListGroup>
-              <Form>
-                <Form.Group controlId="formBasicName">
-                  <Form.Control onChange={this.handleChangeInputName} id="name" type="name" placeholder="Enter your name" />
-                </Form.Group>
+              <ListGroup.Item className="answerCard">
+                <Form className="inputAnswerCard">
+                  <Form.Group className="nameInput" controlId="formBasicName">
+                    <Form.Control onChange={this.handleChangeInputName} id="name" type="name" placeholder="Enter your name" />
+                  </Form.Group>
 
-                <Form.Group controlId="formBasicAnswer">
-                  <Form.Control onChange={this.handleChangeInputAnswer} id="answer" as="textarea" rows="3" placeholder="Type your answer" />
-                </Form.Group>
-                <Button style={{backgroundColor: "#E66F5F", border: "none"}} onClick={this.submitAnswer} variant="primary">
-                  Submit your answer
-                </Button>
-              </Form>
+                  <Form.Group className="answerInput" controlId="formBasicAnswer">
+                    <Form.Control onChange={this.handleChangeInputAnswer} id="answer" as="textarea" rows="1" placeholder="Type your answer" />
+                  </Form.Group>
+                  <Button className="submitButton" style={{backgroundColor: "#F0953D", border: "none"}} onClick={this.submitAnswer} variant="primary">
+                    <img src={plusWhiteIcon} style={{width: '100%'}}/>
+                  </Button>
+                </Form>
+              </ListGroup.Item>
+              </ListGroup>
             </Wrapper>
         )
     }

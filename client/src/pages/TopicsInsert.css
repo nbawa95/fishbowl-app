@@ -1,0 +1,68 @@
+.addQuestionContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  padding-top: 50px;
+  width: 60%;
+  margin: auto;
+  margin-bottom: 50px;
+}
+
+.addQuestionCard {
+  width: 100%;
+}
+
+.submitQuestion {
+  border: none !important;
+  margin: 0px !important;
+  border-radius: 0px !important;
+  background-color: #BCE3FD !important;
+}
+
+.submitQuestion:hover {
+  font-weight: bold;
+}
+
+.arrowImage {
+  height: 40px;
+}
+
+.backArrow {
+  background-color: transparent;
+  border: none;
+  padding: 20px;
+  position: fixed;
+  left: 0%;
+  top: 0%;
+}
+
+.backArrow:hover {
+  -webkit-filter: drop-shadow(5px 5px 5px #525252);
+  filter: drop-shadow(5px 5px 5px #525252);
+}
+
+.animate-left-to-right {
+  animation-name: move-left-to-right;
+  animation-duration: 1s;
+  animation-delay: 0.6s;
+  animation-iteration-count: infinite;
+  animation-direction: alternative;
+}
+
+@keyframes move-left-to-right {
+  0% {
+    transform: translateX(5%);
+  }
+  50% {
+    transform: translateX(15%);
+  }
+  100% {
+    transform: translateX(5%);
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .addQuestionContainer {
+    width: 90%;
+  }
+}

@@ -5,8 +5,10 @@ import styled from 'styled-components'
 
 import 'react-table-6/react-table.css'
 import { Card, CardDeck } from 'react-bootstrap';
+import plus from "../images/plus.png";
 
 import axios from 'axios';
+import './TopicsList.css';
 
 const Wrapper = styled.div`
     padding: 0 40px 40px 40px;
@@ -37,13 +39,6 @@ class TopicsList extends Component {
           .catch((error) => {
             console.log(error);
           })
-
-        // await api.getAllTopics().then(topics => {
-        //     this.setState({
-        //         topics: topics.data.data,
-        //         isLoading: false,
-        //     })
-        // });
     }
 
     seeAnswers(key) {
@@ -56,31 +51,30 @@ class TopicsList extends Component {
 
         return (
             <Wrapper>
-
-                <CardDeck>
-                  <Card style={{borderColor: "rgb(230, 111, 95, 0.5)", borderWidth: "4px"}}>
-                    <Card.Body style={{textAlign: "center"}}>
-                      <Card.Title style={{color: "#274c77"}}>Create a Topic</Card.Title>
-                      <Card.Text>
-                        <Card.Link href="/topics/create">Click Here</Card.Link>
-                      </Card.Text>
+              <div className="container">
+                <Card.Link className="questionLink" href="/topics/create">
+                  <Card className="questionCard" style={{border: "none", borderLeftColor: "#F0953D", borderLeftWidth: "4px"}}>
+                    <Card.Body className="questionBodyAdd">
+                      <img src={plus} />
+                      <Card.Title style={{color: "#F0953D"}}>Create a Topic</Card.Title>
                     </Card.Body>
                   </Card>
-
-                  { topics.map((theTopic, key) =>
-                    <Card className="questionCard" key={key} style={{borderTopColor: "rgb(230, 111, 95, 0.5)", borderTopWidth: "4px"}}>
-                      <Card.Body style={{textAlign: "center"}}>
-                        <Card.Title style={{color: "#274c77"}}>{theTopic.question}</Card.Title>
-                        <Card.Text style={{color: "#8b8c89"}}>
-                          Submitted by {theTopic.name == "" ? 'Anonymous' : theTopic.name}
-                        </Card.Text>
-                      </Card.Body>
-                      <Card.Footer>
-                        <Card.Link href={"/answers/" + theTopic._id} onClick={this.seeAnswers(theTopic._id)}>See Responses</Card.Link>
-                      </Card.Footer>
-                    </Card>
-                  )}
-                </CardDeck>
+                </Card.Link>
+                { topics.map((theTopic, key) =>
+                  <Card.Link className="questionLink" href={"/answers/" + theTopic._id} onClick={this.seeAnswers(theTopic._id)}>
+                  <Card className="questionCard" key={key} style={{border: "none", borderLeftColor: "#F0953D", borderLeftWidth: "4px"}}>
+                  <div id="C">
+                    <Card.Body className="questionBody" style={{height: '200px'}}>
+                      <Card.Title style={{color: "#F0953D"}}>{theTopic.question}</Card.Title>
+                    </Card.Body>
+                    </div>
+                    <div id="D">
+                      Submitted by {theTopic.name == "" ? 'Anonymous' : theTopic.name}
+                    </div>
+                  </Card>
+                  </Card.Link>
+                )}
+              </div>
             </Wrapper>
         )
     }

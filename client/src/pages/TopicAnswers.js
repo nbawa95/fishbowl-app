@@ -5,6 +5,7 @@ import styled from 'styled-components'
 
 import 'react-table-6/react-table.css'
 import { Card, CardDeck } from 'react-bootstrap';
+import './TopicsAnswers.css';
 
 const Wrapper = styled.div`
     padding: 0 40px 40px 40px;
@@ -44,10 +45,11 @@ class TopicAnswers extends Component {
 
         return (
             <Wrapper>
-              <ListGroup variant="flush">
+              <div className="container">
                 { answers.map((theAnswer, key) =>
-                  <ListGroup.Item>{theAnswer.name:} {theAnswer.answer}</ListGroup.Item>
-              </ListGroup>
+                  <Card>{theAnswer.name:}hi {theAnswer.answer}</Card>
+                }
+              </div>
             </Wrapper>
         )
     }
