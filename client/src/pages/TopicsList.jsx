@@ -56,7 +56,7 @@ class TopicsList extends Component {
                   <Card className="questionCard" style={{border: "none", borderLeftColor: "#F0953D", borderLeftWidth: "4px"}}>
                     <Card.Body className="questionBodyAdd">
                       <img src={plus} />
-                      <Card.Title style={{color: "#F0953D"}}>Add a question to the fishbowl</Card.Title>
+                      <Card.Title style={{color: "#F0953D", fontWeight: '350'}}>Add a question to the fishbowl</Card.Title>
                     </Card.Body>
                   </Card>
                 </Card.Link>
@@ -65,7 +65,7 @@ class TopicsList extends Component {
                   <Card className="questionCard" key={theTopic._id} style={{border: "none", borderLeftColor: "#F0953D", borderLeftWidth: "4px"}}>
                   <div id="C">
                     <Card.Body className="questionBody" style={{height: '200px'}}>
-                      <Card.Title style={{color: "#F0953D"}}>{theTopic.question}</Card.Title>
+                      <Card.Title style={{color: "#F0953D", fontWeight: '350'}}>{theTopic.question}</Card.Title>
                     </Card.Body>
                     </div>
                     <div id="D">

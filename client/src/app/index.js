@@ -13,6 +13,7 @@ function App() {
         <Router>
           <div id="A">
             <h1 style={{textAlign: "center", fontSize: '60px', color: "#F0953D", fontFamily: "FindetNemo"}}>fiShBoWl.</h1>
+            <h6 style={{textAlign: "center", color: "#3D5A80", fontWeight: '300'}}>Pick a question from the fishbowl and answer it, or add one of your own!</h6>
           </div>
 
             <Switch>
@@ -26,7 +27,7 @@ function App() {
                 />
             </Switch>
             <img src={seaweed} style={{height: '300px', bottom: '0', left: '0', position: 'fixed', paddingRight: '20px', zIndex: -1}}/>
-            <img src={fishLogo} style={{width: '100px', bottom: '0', right: '0', position: 'fixed', paddingRight: '20px', zIndex: -1}}/>
+            <img src={fishLogo} style={{width: '150px', bottom: '0', right: '0', position: 'fixed', paddingRight: '20px', zIndex: -1}}/>
             <div style={{color: "#3D5A80", textAlign: "center", fontSize: '15px', padding: "15px"}}>
               Copyright © Nikita Bawa 2020
             </div>
