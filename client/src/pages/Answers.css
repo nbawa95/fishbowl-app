@@ -69,4 +69,12 @@
     width: 40px;
     margin: auto;
   }
+
+  .theAnswers {
+    padding: 5px !important;
+  }
+
+  .questionTitle {
+    font-size: 1.75rem !important;
+  }
 }

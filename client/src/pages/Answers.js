@@ -110,7 +110,7 @@ class Answers extends Component {
         const { answers } = this.state.answers;
 
         return (
-            <Wrapper>
+            <Wrapper className='theAnswers'>
               <a className="backArrow animate-left-to-right" href='/'>
                 <img className="arrowImage" src={backArrow}/>
               </a>
