@@ -68,9 +68,12 @@ class TopicsInsert extends Component {
         }
 
         axios.post('/api/topics/create', payload)
-        .then(res => console.log(res.data));
-
-        window.location.href='/topics/getTopics'
+        .then(res => {
+          console.log(res.data)
+          setTimeout(() => {
+            window.location.href='/topics/getTopics';
+          }, 1000);
+        });
 
     }
 

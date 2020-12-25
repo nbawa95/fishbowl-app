@@ -114,7 +114,7 @@ class Answers extends Component {
               <a className="backArrow animate-left-to-right" href='/'>
                 <img className="arrowImage" src={backArrow}/>
               </a>
-              <h1 style={{color: "#F0953D", textAlign: "center", margin: "50px"}}>{this.state.question}</h1>
+              <h1 className="questionTitle" style={{color: "#F0953D", textAlign: "center", margin: "50px"}}>{this.state.question}</h1>
               <ListGroup className="answerContainer" variant="flush" style={{paddingBottom: "30px"}}>
               { this.state.answers.map((answer, key) =>
                 <ListGroup.Item className="answerCard"><b>{answer.name}:</b> {answer.answer}</ListGroup.Item>

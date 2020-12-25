@@ -61,8 +61,8 @@ class TopicsList extends Component {
                   </Card>
                 </Card.Link>
                 { topics.map((theTopic, key) =>
-                  <Card.Link className="questionLink" href={"/answers/" + theTopic._id} onClick={this.seeAnswers(theTopic._id)}>
-                  <Card className="questionCard" key={key} style={{border: "none", borderLeftColor: "#F0953D", borderLeftWidth: "4px"}}>
+                  <Card.Link key={theTopic._id} className="questionLink" href={"/answers/" + theTopic._id} onClick={this.seeAnswers(theTopic._id)}>
+                  <Card className="questionCard" key={theTopic._id} style={{border: "none", borderLeftColor: "#F0953D", borderLeftWidth: "4px"}}>
                   <div id="C">
                     <Card.Body className="questionBody" style={{height: '200px'}}>
                       <Card.Title style={{color: "#F0953D"}}>{theTopic.question}</Card.Title>
