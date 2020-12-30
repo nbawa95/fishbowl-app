@@ -126,7 +126,7 @@ class Answers extends Component {
                   </Form.Group>
 
                   <Form.Group className="answerInput" controlId="formBasicAnswer">
-                    <Form.Control onChange={this.handleChangeInputAnswer} id="answer" as="textarea" rows="1" placeholder="Type your answer" />
+                    <Form.Control onChange={this.handleChangeInputAnswer} id="answer" as="textarea" rows="4" placeholder="Type your answer" />
                   </Form.Group>
                   <Button className="submitButton" style={{backgroundColor: "#F0953D", border: "none"}} onClick={this.submitAnswer} variant="primary">
                     <img src={plusWhiteIcon} style={{width: '100%'}}/>
