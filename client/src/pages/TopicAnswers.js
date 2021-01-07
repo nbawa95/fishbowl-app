@@ -47,7 +47,8 @@ class TopicAnswers extends Component {
             <Wrapper>
               <div className="container">
                 { answers.map((theAnswer, key) =>
-                  <Card>{theAnswer.name:}hi {theAnswer.answer}</Card>
+                  <Card>{theAnswer.name:}hi {theAnswer.answer}
+                  </Card>
                 }
               </div>
             </Wrapper>
