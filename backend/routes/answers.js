@@ -29,4 +29,11 @@ router.route('/:id').get((req, res) => {
     .catch(err => res.status(400).json('Error: ' + err));
 });
 
+router.route('/deleteAnswer/:id').delete((req, res) => {
+  Answer.findByIdAndDelete({ _id: req.params.id })
+    .then(() => res.json('Answer deleted.'))
+    .catch(err => res.status(400).json('Error: ' + err));
+});
+
+
 module.exports = router;
